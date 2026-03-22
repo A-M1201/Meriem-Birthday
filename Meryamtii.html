@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="fr" class="h-full">
+ <head>
+<link rel="icon" type="image/png" href="images/favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Meriem ❤️</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&display=swap');
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{height:100%;scroll-behavior:smooth}
+body{height:100%;font-family:'Cormorant Garamond',serif;background:#0a0008;color:#fef0f5;overflow-x:hidden;overflow-y:auto}
+
+:root{
+  --rose:#e8a0bf;--gold:#d4a574;--blush:#f5d0df;--deep:#2a0a1a;
+  --cream:#fef7f0;--wine:#8b1a4a;--pink-glow:rgba(232,160,191,0.3);
+  --glass:rgba(255,255,255,0.06);--glass-border:rgba(255,255,255,0.12);
+}
+
+.page-wrapper{width:100%;height:100%;overflow-y:auto;overflow-x:hidden;position:relative;background:linear-gradient(180deg,#0a0008 0%,#1a0515 30%,#0d0210 60%,#0a0008 100%)}
+
+/* Floating Hearts */
+.hearts-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden}
+.floating-heart{position:absolute;bottom:-60px;opacity:0;font-size:20px;animation:floatHeart linear infinite;pointer-events:none}
+@keyframes floatHeart{
+  0%{transform:translateY(0) rotate(0deg) scale(0.5);opacity:0}
+  10%{opacity:0.7}
+  50%{opacity:0.5}
+  90%{opacity:0.2}
+  100%{transform:translateY(-110%) rotate(720deg) scale(1.2);opacity:0}
+}
+
+/* Particle field */
+.particle-field{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.particle{position:absolute;border-radius:50%;background:var(--rose);opacity:0;animation:particlePulse ease-in-out infinite}
+@keyframes particlePulse{
+  0%,100%{opacity:0;transform:scale(0.5)}
+  50%{opacity:0.4;transform:scale(1)}
+}
+
+/* Section base */
+.section{position:relative;z-index:2;padding:80px 20px;opacity:0;transform:translateY(40px);transition:opacity 1.2s ease,transform 1.2s ease}
+.section.visible{opacity:1;transform:translateY(0)}
+
+/* Hero */
+.hero-section{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;z-index:2;padding:40px 20px}
+.hero-glow{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(232,160,191,0.15) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:pulseGlow 4s ease-in-out infinite;pointer-events:none}
+@keyframes pulseGlow{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:0.6}50%{transform:translate(-50%,-50%) scale(1.3);opacity:1}}
+
+.hero-title{font-family:'Great Vibes',cursive;font-size:clamp(2.8rem,8vw,6rem);color:var(--blush);text-shadow:0 0 60px rgba(232,160,191,0.5),0 0 120px rgba(232,160,191,0.2);opacity:0;animation:titleReveal 2s ease forwards 0.5s;line-height:1.2;margin-bottom:16px}
+@keyframes titleReveal{0%{opacity:0;transform:translateY(30px) scale(0.9);filter:blur(10px)}100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+
+.hero-subtitle{font-family:'Playfair Display',serif;font-size:clamp(1rem,3vw,1.6rem);color:var(--rose);opacity:0;animation:subtitleReveal 2s ease forwards 1.5s;letter-spacing:3px;font-style:italic;font-weight:300}
+@keyframes subtitleReveal{0%{opacity:0;transform:translateY(20px)}100%{opacity:0.9;transform:translateY(0)}}
+
+.hero-divider{width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:24px auto;opacity:0;animation:subtitleReveal 2s ease forwards 2s}
+
+.scroll-hint{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);opacity:0;animation:scrollHint 2s ease forwards 3s}
+@keyframes scrollHint{0%{opacity:0}100%{opacity:0.6}}
+.scroll-arrow{width:24px;height:24px;border-right:2px solid var(--rose);border-bottom:2px solid var(--rose);transform:rotate(45deg);animation:bounceArrow 2s ease-in-out infinite}
+@keyframes bounceArrow{0%,100%{transform:rotate(45deg) translate(0,0)}50%{transform:rotate(45deg) translate(5px,5px)}}
+
+/* Glass card */
+.glass-card{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--glass-border);border-radius:24px;padding:40px 32px;box-shadow:0 8px 32px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,255,255,0.05);transition:transform 0.4s ease,box-shadow 0.4s ease}
+.glass-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(232,160,191,0.15),inset 0 1px 0 rgba(255,255,255,0.08)}
+
+/* Section titles */
+.section-title{font-family:'Great Vibes',cursive;font-size:clamp(2rem,5vw,3.2rem);color:var(--blush);text-align:center;margin-bottom:12px;text-shadow:0 0 40px rgba(232,160,191,0.3)}
+.section-line{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 40px}
+
+/* Love letter */
+.love-letter{max-width:750px;margin:0 auto}
+.love-letter p{font-family:'Cormorant Garamond',serif;font-size:clamp(1.05rem,2.5vw,1.3rem);line-height:2;color:rgba(254,240,245,0.88);margin-bottom:20px;font-weight:300;text-align:justify}
+.love-letter .arabic-text{font-size:clamp(1.1rem,2.5vw,1.4rem);direction:rtl;text-align:right;color:var(--blush);font-style:italic;margin:28px 0;padding:20px;border-right:2px solid var(--gold);background:rgba(212,165,116,0.05);border-radius:0 12px 12px 0}
+.love-letter .signature{text-align:right;font-family:'Great Vibes',cursive;font-size:clamp(1.4rem,3vw,2rem);color:var(--gold);margin-top:32px}
+
+/* Timer */
+.timer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:600px;margin:0 auto}
+.timer-unit{text-align:center;padding:24px 12px;background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:transform 0.3s ease}
+.timer-unit:hover{transform:scale(1.05)}
+.timer-value{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;background:linear-gradient(135deg,var(--blush),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1.2}
+.timer-label{font-family:'Cormorant Garamond',serif;font-size:clamp(0.7rem,1.8vw,0.95rem);color:var(--rose);letter-spacing:3px;text-transform:uppercase;margin-top:8px;display:block;opacity:0.7}
+.timer-since{text-align:center;margin-top:24px;font-family:'Cormorant Garamond',serif;font-size:clamp(0.85rem,2vw,1.1rem);color:rgba(232,160,191,0.6);font-style:italic}
+
+/* Wishes */
+.wishes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:900px;margin:0 auto}
+.wish-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;padding:32px 24px;text-align:center;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:all 0.5s ease;cursor:default;position:relative;overflow:hidden}
+.wish-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(232,160,191,0.08),transparent,rgba(212,165,116,0.08),transparent);animation:rotateShimmer 8s linear infinite;pointer-events:none}
+@keyframes rotateShimmer{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.wish-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 20px 60px rgba(232,160,191,0.2);border-color:rgba(232,160,191,0.3)}
+.wish-emoji{font-size:2.4rem;margin-bottom:16px;display:block}
+.wish-text{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2vw,1.15rem);line-height:1.8;color:rgba(254,240,245,0.85);font-weight:300;position:relative;z-index:1}
+
+/* Gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:900px;margin:0 auto}
+.gallery-item{aspect-ratio:1;border-radius:20px;overflow:hidden;position:relative;cursor:pointer;border:1px solid var(--glass-border);transition:all 0.5s ease}
+.gallery-item:hover{transform:scale(1.05);box-shadow:0 16px 48px rgba(232,160,191,0.25);border-color:var(--rose)}
+.gallery-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;color:var(--rose);font-size:0.9rem;gap:8px;position:relative;z-index:1}
+.gallery-placeholder .gp-icon{font-size:2rem;opacity:0.6}
+.gallery-item::before{content:'';position:absolute;inset:0;z-index:0}
+.gi-1::before{background:linear-gradient(135deg,#2a0a1a,#1a0520)}
+.gi-2::before{background:linear-gradient(135deg,#1a0520,#0d0818)}
+.gi-3::before{background:linear-gradient(135deg,#20061a,#0a0515)}
+.gi-4::before{background:linear-gradient(135deg,#1a0815,#150520)}
+.gi-5::before{background:linear-gradient(135deg,#0d0818,#200a1a)}
+.gi-6::before{background:linear-gradient(135deg,#150520,#1a0a15)}
+
+/* Surprise */
+.surprise-section{text-align:center}
+.surprise-btn{font-family:'Playfair Display',serif;font-size:clamp(1rem,2.5vw,1.2rem);padding:18px 48px;background:linear-gradient(135deg,var(--wine),#a0204e);color:var(--cream);border:1px solid rgba(232,160,191,0.3);border-radius:60px;cursor:pointer;transition:all 0.5s ease;letter-spacing:2px;position:relative;overflow:hidden}
+.surprise-btn::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(255,255,255,0.1),transparent);animation:rotateShimmer 4s linear infinite}
+.surprise-btn:hover{transform:scale(1.05);box-shadow:0 12px 40px rgba(139,26,74,0.4);border-color:var(--rose)}
+.surprise-btn:active{transform:scale(0.97)}
+.surprise-reveal{max-width:650px;margin:32px auto 0;opacity:0;transform:translateY(20px) scale(0.95);transition:all 1s ease;pointer-events:none}
+.surprise-reveal.show{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+.surprise-reveal p{font-family:'Cormorant Garamond',serif;font-size:clamp(1.05rem,2.5vw,1.3rem);line-height:2;color:rgba(254,240,245,0.9);font-weight:300}
+
+/* Music */
+.music-ctrl{position:fixed;bottom:24px;right:24px;z-index:100;display:flex;align-items:center;gap:10px;background:var(--glass);border:1px solid var(--glass-border);border-radius:50px;padding:10px 18px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);cursor:pointer;transition:all 0.3s ease}
+.music-ctrl:hover{box-shadow:0 8px 24px rgba(232,160,191,0.2);border-color:var(--rose)}
+.music-icon{width:20px;height:20px;display:flex;align-items:center;justify-content:center;gap:2px}
+.music-bar{width:3px;background:var(--rose);border-radius:2px;transition:height 0.3s ease}
+.music-ctrl.playing .music-bar{animation:musicBars 0.8s ease-in-out infinite alternate}
+.music-bar:nth-child(1){height:8px;animation-delay:0s}
+.music-bar:nth-child(2){height:14px;animation-delay:0.2s}
+.music-bar:nth-child(3){height:6px;animation-delay:0.4s}
+.music-ctrl:not(.playing) .music-bar{height:3px!important;animation:none!important}
+@keyframes musicBars{0%{height:4px}100%{height:18px}}
+.music-label{font-family:'Cormorant Garamond',serif;font-size:0.8rem;color:var(--rose);letter-spacing:1px;white-space:nowrap}
+
+/* Finale */
+.finale-section{text-align:center;padding:100px 20px 120px}
+.finale-text{font-family:'Great Vibes',cursive;font-size:clamp(2.2rem,6vw,4rem);background:linear-gradient(135deg,var(--blush),var(--gold),var(--blush));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-shadow:none;animation:finaleGlow 3s ease-in-out infinite alternate;line-height:1.4}
+@keyframes finaleGlow{0%{filter:drop-shadow(0 0 20px rgba(232,160,191,0.3))}100%{filter:drop-shadow(0 0 40px rgba(232,160,191,0.6))}}
+.finale-hearts{font-size:2rem;margin-top:24px;opacity:0.7;animation:pulseHearts 2s ease-in-out infinite}
+@keyframes pulseHearts{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+.finale-date{font-family:'Cormorant Garamond',serif;font-size:clamp(0.85rem,2vw,1rem);color:rgba(212,165,116,0.5);margin-top:32px;letter-spacing:4px;text-transform:uppercase}
+
+/* Loading overlay */
+.loader{position:fixed;inset:0;z-index:999;display:flex;align-items:center;justify-content:center;background:#0a0008;transition:opacity 1.5s ease}
+.loader.hide{opacity:0;pointer-events:none}
+.loader-heart{font-size:3rem;animation:loaderPulse 1s ease-in-out infinite}
+@keyframes loaderPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
+
+@media(max-width:600px){
+  .timer-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .wishes-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .section{padding:60px 16px}
+  .glass-card{padding:28px 20px}
+  .music-label{display:none}
+}
+</style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div class="loader" id="loader">
+   <div class="loader-heart">
+    💖
+   </div>
+  </div>
+  <div class="page-wrapper" id="pageWrapper">
+   <!-- Particles -->
+   <div class="particle-field" id="particleField"></div><!-- Floating Hearts -->
+   <div class="hearts-container" id="heartsContainer"></div><!-- Music Control -->
+   <div class="music-ctrl" id="musicCtrl" title="Toggle music">
+    <div class="music-icon">
+     <div class="music-bar"></div>
+     <div class="music-bar"></div>
+     <div class="music-bar"></div>
+    </div><span class="music-label">Music</span>
+   </div><!-- HERO -->
+   <section class="hero-section" id="heroSection">
+    <div class="hero-glow"></div>
+    <h1 class="hero-title" id="heroTitle">Happy Birthday Meriem ❤️</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-subtitle" id="heroSubtitle">20 years of beauty, love, and magic</p>
+    <div class="scroll-hint">
+     <div class="scroll-arrow"></div>
+    </div>
+   </section><!-- LOVE LETTER -->
+   <section class="section" id="loveSection">
+    <div class="section-title">
+     Ma Lettre d'Amour
+    </div>
+    <div class="section-line"></div>
+    <div class="glass-card love-letter">
+     <p>Ma très chère Meriem,</p>
+     <p>Aujourd'hui, le monde célèbre le jour où tu es née — ce jour béni du 23 mars qui a donné naissance à la plus belle personne que j'ai jamais connue. En ce jour spécial de tes 20 ans, je veux que tu saches à quel point tu as transformé ma vie depuis le 12 janvier 2025.</p>
+     <p>Chaque matin, je me réveille en remerciant le destin de t'avoir mise sur mon chemin. Tu es mon soleil dans les jours sombres, mon étoile dans la nuit, mon refuge quand le monde devient trop lourd. Avec toi, j'ai découvert un amour que je croyais n'exister que dans les rêves.</p>
+     <div class="arabic-text">
+      يا مريم، أنتِ أجمل هدية أعطاني إياها القدر. كل يوم معك هو يوم مليء بالحب والسعادة. أحبك من كل قلبي ❤️
+     </div>
+     <p>Tu es ma poésie vivante, mon aventure préférée, et la raison pour laquelle je crois au bonheur. Chaque moment passé à tes côtés est un trésor que je garde précieusement dans mon cœur.</p>
+     <p>Joyeux anniversaire, mon amour. Que cette nouvelle année de ta vie soit remplie de tout ce que ton cœur désire, et sache que je serai toujours là, à tes côtés, à t'aimer chaque jour un peu plus.</p>
+     <div class="signature">
+      Avec tout mon amour, à toi pour toujours 💕
+     </div>
+    </div>
+   </section><!-- TIMER -->
+   <section class="section" id="timerSection">
+    <div class="section-title">
+     Notre Temps Ensemble
+    </div>
+    <div class="section-line"></div>
+    <div class="timer-grid">
+     <div class="timer-unit"><span class="timer-value" id="tDays">000</span><span class="timer-label">Jours</span>
+     </div>
+     <div class="timer-unit"><span class="timer-value" id="tHours">00</span><span class="timer-label">Heures</span>
+     </div>
+     <div class="timer-unit"><span class="timer-value" id="tMins">00</span><span class="timer-label">Minutes</span>
+     </div>
+     <div class="timer-unit"><span class="timer-value" id="tSecs">00</span><span class="timer-label">Secondes</span>
+     </div>
+    </div>
+    <div class="timer-since">
+     Depuis le 12 janvier 2025 à 11h00 ☀️
+    </div>
+   </section><!-- WISHES -->
+   <section class="section" id="wishesSection">
+    <div class="section-title">
+     Mes Vœux Pour Toi
+    </div>
+    <div class="section-line"></div>
+    <div class="wishes-grid">
+     <div class="wish-card"><span class="wish-emoji">🌹</span>
+      <p class="wish-text">Je te souhaite un bonheur infini, aussi profond que l'océan et aussi vaste que le ciel.</p>
+     </div>
+     <div class="wish-card"><span class="wish-emoji">✨</span>
+      <p class="wish-text">Que chaque jour t'apporte de nouvelles raisons de sourire et que chaque rêve se réalise.</p>
+     </div>
+     <div class="wish-card"><span class="wish-emoji">💎</span>
+      <p class="wish-text">Je te souhaite la santé, la réussite et tout l'amour que tu mérites — et tu mérites le monde entier.</p>
+     </div>
+     <div class="wish-card"><span class="wish-emoji">🦋</span>
+      <p class="wish-text">Que tes 20 ans soient le début du plus beau chapitre de ta vie, rempli de magie et d'aventures.</p>
+     </div>
+     <div class="wish-card"><span class="wish-emoji">🌙</span>
+      <p class="wish-text">Je te promets d'être là à chaque instant, de te protéger et de t'aimer sans conditions.</p>
+     </div>
+     <div class="wish-card"><span class="wish-emoji">🔥</span>
+      <p class="wish-text">Que notre amour grandisse chaque jour et devienne une histoire que le temps ne pourra jamais effacer.</p>
+     </div>
+    </div>
+   </section><!-- GALLERY -->
+   <section class="section" id="gallerySection">
+    <div class="section-title">
+     Nos Souvenirs
+    </div>
+    <div class="section-line"></div>
+    <div class="gallery-grid">
+     <div class="gallery-item gi-1">
+      <div class="gallery-placeholder"><span class="gp-icon">📸</span><span>Notre premier jour</span>
+      </div>
+     </div>
+     <div class="gallery-item gi-2">
+      <div class="gallery-placeholder"><span class="gp-icon">💑</span><span>Ensemble</span>
+      </div>
+     </div>
+     <div class="gallery-item gi-3">
+      <div class="gallery-placeholder"><span class="gp-icon">🌅</span><span>Coucher de soleil</span>
+      </div>
+     </div>
+     <div class="gallery-item gi-4">
+      <div class="gallery-placeholder"><span class="gp-icon">🎂</span><span>Célébration</span>
+      </div>
+     </div>
+     <div class="gallery-item gi-5">
+      <div class="gallery-placeholder"><span class="gp-icon">✈️</span><span>Aventures</span>
+      </div>
+     </div>
+     <div class="gallery-item gi-6">
+      <div class="gallery-placeholder"><span class="gp-icon">❤️</span><span>Pour toujours</span>
+      </div>
+     </div>
+    </div>
+   </section><!-- SURPRISE -->
+   <section class="section surprise-section" id="surpriseSection">
+    <div class="section-title">
+     Un Dernier Cadeau
+    </div>
+    <div class="section-line"></div><button class="surprise-btn" id="surpriseBtn">Ouvre ton cadeau 🎁</button>
+    <div class="surprise-reveal glass-card" id="surpriseReveal">
+     <p>Ma Meriem,</p>
+     <p style="margin-top:16px">Si je pouvais t'offrir une étoile pour chaque moment où tu m'as rendu heureux, le ciel entier t'appartiendrait. Tu n'es pas seulement la personne que j'aime — tu es la raison pour laquelle je comprends ce que signifie l'amour.</p>
+     <p style="margin-top:16px">Chaque battement de mon cœur murmure ton nom. Chaque sourire que tu me donnes est un cadeau plus précieux que tout l'or du monde.</p>
+     <p style="margin-top:16px;color:var(--gold);font-style:italic;font-size:clamp(1.1rem,2.5vw,1.4rem)">أنتِ حياتي كلها يا مريم. عيد ميلاد سعيد يا أغلى إنسانة في قلبي 🤍</p>
+    </div>
+   </section><!-- FINALE -->
+   <section class="section finale-section" id="finaleSection">
+    <div class="finale-text" id="finaleText">
+     I will always love you Meriem ❤️
+    </div>
+    <div class="finale-hearts">
+     💕 💖 💕
+    </div>
+    <div class="finale-date">
+     23 Mars 2006 — ∞
+    </div>
+   </section>
+  </div>
+  <script>
+// ===== DEFAULT CONFIG =====
+const defaultConfig = {
+  hero_title: 'Happy Birthday Meriem ❤️',
+  hero_subtitle: '20 years of beauty, love, and magic',
+  final_message: 'I will always love you Meriem ❤️',
+  background_color: '#0a0008',
+  surface_color: 'rgba(255,255,255,0.06)',
+  text_color: '#fef0f5',
+  primary_action_color: '#8b1a4a',
+  secondary_action_color: '#e8a0bf',
+  font_family: 'Great Vibes',
+  font_size: 16
+};
+
+// ===== ELEMENT SDK INIT =====
+function applyConfig(config) {
+  const c = Object.assign({}, defaultConfig, config);
+
+  const heroTitle = document.getElementById('heroTitle');
+  const heroSub = document.getElementById('heroSubtitle');
+  const finale = document.getElementById('finaleText');
+
+  if (heroTitle) heroTitle.textContent = c.hero_title;
+  if (heroSub) heroSub.textContent = c.hero_subtitle;
+  if (finale) heroTitle && (finale.textContent = c.final_message);
+
+  // Colors
+  document.documentElement.style.setProperty('--deep', c.background_color);
+  const wrapper = document.getElementById('pageWrapper');
+  if (wrapper) wrapper.style.background = `linear-gradient(180deg, ${c.background_color} 0%, #1a0515 30%, #0d0210 60%, ${c.background_color} 100%)`;
+
+  document.querySelectorAll('.glass-card, .timer-unit, .wish-card').forEach(el => {
+    el.style.background = c.surface_color;
+  });
+
+  document.querySelectorAll('.love-letter p, .wish-text, .surprise-reveal p').forEach(el => {
+    el.style.color = c.text_color;
+  });
+
+  const btn = document.getElementById('surpriseBtn');
+  if (btn) btn.style.background = `linear-gradient(135deg, ${c.primary_action_color}, #a0204e)`;
+
+  document.querySelectorAll('.section-title, .hero-title, .finale-text').forEach(el => {
+    el.style.color = c.secondary_action_color;
+  });
+
+  // Fonts
+  const customFont = c.font_family || defaultConfig.font_family;
+  const baseSerif = 'Cormorant Garamond, serif';
+  document.querySelectorAll('.hero-title, .section-title, .finale-text, .love-letter .signature').forEach(el => {
+    el.style.fontFamily = `${customFont}, cursive, ${baseSerif}`;
+  });
+
+  const baseSize = c.font_size || defaultConfig.font_size;
+  document.querySelectorAll('.love-letter p, .wish-text, .surprise-reveal p').forEach(el => {
+    el.style.fontSize = `${baseSize}px`;
+  });
+  if (heroTitle) heroTitle.style.fontSize = `${baseSize * 3.5}px`;
+  if (heroSub) heroSub.style.fontSize = `${baseSize * 1.2}px`;
+}
+
+if (window.elementSdk) {
+  window.elementSdk.init({
+    defaultConfig,
+    onConfigChange: async (config) => { applyConfig(config); },
+    mapToCapabilities: (config) => {
+      const c = Object.assign({}, defaultConfig, config);
+      return {
+        recolorables: [
+          { get: () => c.background_color, set: (v) => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
+          { get: () => c.surface_color === defaultConfig.surface_color ? '#1a1020' : c.surface_color, set: (v) => { config.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); } },
+          { get: () => c.text_color, set: (v) => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
+          { get: () => c.primary_action_color, set: (v) => { config.primary_action_color = v; window.elementSdk.setConfig({ primary_action_color: v }); } },
+          { get: () => c.secondary_action_color, set: (v) => { config.secondary_action_color = v; window.elementSdk.setConfig({ secondary_action_color: v }); } }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => c.font_family || defaultConfig.font_family,
+          set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); }
+        },
+        fontSizeable: {
+          get: () => c.font_size || defaultConfig.font_size,
+          set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); }
+        }
+      };
+    },
+    mapToEditPanelValues: (config) => {
+      const c = Object.assign({}, defaultConfig, config);
+      return new Map([
+        ['hero_title', c.hero_title],
+        ['hero_subtitle', c.hero_subtitle],
+        ['final_message', c.final_message]
+      ]);
+    }
+  });
+}
+
+// ===== PARTICLES =====
+(function initParticles() {
+  const field = document.getElementById('particleField');
+  for (let i = 0; i < 30; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.top = Math.random() * 100 + '%';
+    p.style.width = p.style.height = (Math.random() * 3 + 1) + 'px';
+    p.style.animationDuration = (Math.random() * 4 + 3) + 's';
+    p.style.animationDelay = (Math.random() * 5) + 's';
+    field.appendChild(p);
+  }
+})();
+
+// ===== FLOATING HEARTS =====
+const heartEmojis = ['💖','💕','❤️','💗','💓','🤍','💘','🌹'];
+function spawnHeart() {
+  const container = document.getElementById('heartsContainer');
+  const heart = document.createElement('div');
+  heart.className = 'floating-heart';
+  heart.textContent = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+  heart.style.left = Math.random() * 100 + '%';
+  heart.style.fontSize = (Math.random() * 16 + 12) + 'px';
+  heart.style.animationDuration = (Math.random() * 8 + 8) + 's';
+  heart.style.animationDelay = '0s';
+  container.appendChild(heart);
+  setTimeout(() => heart.remove(), 16000);
+}
+setInterval(spawnHeart, 1800);
+
+// ===== TIMER =====
+const startDate = new Date('2025-01-12T11:00:00');
+function updateTimer() {
+  const now = new Date();
+  let diff = Math.floor((now - startDate) / 1000);
+  const days = Math.floor(diff / 86400); diff %= 86400;
+  const hours = Math.floor(diff / 3600); diff %= 3600;
+  const mins = Math.floor(diff / 60);
+  const secs = diff % 60;
+  const dEl = document.getElementById('tDays');
+  const hEl = document.getElementById('tHours');
+  const mEl = document.getElementById('tMins');
+  const sEl = document.getElementById('tSecs');
+  if (dEl) dEl.textContent = String(days).padStart(3,'0');
+  if (hEl) hEl.textContent = String(hours).padStart(2,'0');
+  if (mEl) mEl.textContent = String(mins).padStart(2,'0');
+  if (sEl) sEl.textContent = String(secs).padStart(2,'0');
+}
+setInterval(updateTimer, 1000);
+updateTimer();
+
+// ===== SCROLL REVEAL =====
+const sections = document.querySelectorAll('.section');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+sections.forEach(s => observer.observe(s));
+
+// ===== SURPRISE =====
+document.getElementById('surpriseBtn').addEventListener('click', function() {
+  const reveal = document.getElementById('surpriseReveal');
+  reveal.classList.toggle('show');
+  this.textContent = reveal.classList.contains('show') ? 'Merci mon amour 💕' : 'Ouvre ton cadeau 🎁';
+});
+
+// ===== MUSIC PLAYER (MP3) =====
+let audioPlayer = null;
+let isPlaying = false;
+const musicCtrl = document.getElementById('musicCtrl');
+
+// Create hidden audio element
+function initAudioPlayer() {
+  if (audioPlayer) return;
+  audioPlayer = document.createElement('audio');
+  audioPlayer.id = 'birthdayAudio';
+  audioPlayer.volume = 0.4; // Soft volume by default
+  audioPlayer.loop = true; // Loop the song
+  
+  // Replace this with your MP3 file URL
+  audioPlayer.src = 'music/birthday.mp3';
+  
+  audioPlayer.addEventListener('play', () => {
+    musicCtrl.classList.add('playing');
+    isPlaying = true;
+  });
+  
+  audioPlayer.addEventListener('pause', () => {
+    musicCtrl.classList.remove('playing');
+    isPlaying = false;
+  });
+  
+  audioPlayer.addEventListener('error', () => {
+    console.error('Failed to load audio file. Check your MP3 URL.');
+    musicCtrl.classList.remove('playing');
+    isPlaying = false;
+  });
+  
+  document.body.appendChild(audioPlayer);
+}
+
+musicCtrl.addEventListener('click', () => {
+  if (!audioPlayer) initAudioPlayer();
+  
+  if (isPlaying) {
+    audioPlayer.pause();
+  } else {
+    audioPlayer.play().catch(err => {
+      console.error('Playback failed:', err);
+    });
+  }
+});
+
+// ===== LOADER =====
+setTimeout(() => {
+  document.getElementById('loader').classList.add('hide');
+}, 1500);
+
+// ===== PARALLAX-LITE =====
+const wrapper = document.getElementById('pageWrapper');
+wrapper.addEventListener('scroll', () => {
+  const scrollY = wrapper.scrollTop;
+  const heroGlow = document.querySelector('.hero-glow');
+  if (heroGlow) heroGlow.style.transform = `translate(-50%, calc(-50% + ${scrollY * 0.15}px))`;
+});
+</script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e05ce0df1a1335d',t:'MTc3NDE4ODg4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
